@@ -4,12 +4,9 @@ import JokeList from "./JokeList";
 function App() {
   return (
     <div className="App">
-      <JokeList />
+      <JokeList length={10}/>
     </div>
   );
 }
 
 export default App;
-<button onClick={()=>handleDislike()}>Dislike</button>
-{text}
-<button onClick={() =>handleLike()}>Like</button>
