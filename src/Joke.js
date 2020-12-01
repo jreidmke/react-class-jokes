@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Joke.css";
 
-function Joke({ vote, votes, text, id }) {
-  const upVote = () => vote(id, +1); //
-  const downVote = () => vote(id, -1);
+function Joke({ vote, votes, text, id }) {//props will be put in constructor
+  const upVote = () => vote(id, +1); //upVote method will be bound in reformat
+  const downVote = () => vote(id, -1);//downVote method will be bound in reformat
 
   return (
     <div className="Joke">
@@ -25,3 +25,5 @@ function Joke({ vote, votes, text, id }) {
 }
 
 export default Joke;
+
+class Joke extends Component
