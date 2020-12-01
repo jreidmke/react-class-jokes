@@ -5,7 +5,7 @@ function Joke({ vote, votes, text, id }) {//props will be put in constructor
   const upVote = () => vote(id, +1); //upVote method will be bound in reformat
   const downVote = () => vote(id, -1);//downVote method will be bound in reformat
 
-  return (
+  return (//return will start with render() func
     <div className="Joke">
       <div className="Joke-votearea">
         <button onClick={upVote}>
@@ -26,4 +26,20 @@ function Joke({ vote, votes, text, id }) {//props will be put in constructor
 
 export default Joke;
 
-class Joke extends Component
+class Joke extends Component {
+  constructor(props) {
+    super(props);
+    this.upVote = this.upVote.bind(this)
+    this.downVote = this.downVote.bind(this)
+  }
+
+  upVote() {
+    this.props.vote(this.props.id, +1);
+  }
+
+  downVote() {
+    this.props.vote(this.props.id, -1);
+  }
+
+
+}
